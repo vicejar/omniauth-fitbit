@@ -8,7 +8,7 @@ module OmniAuth
       option :name, "fitbit"
 
       option :client_options, {
-          :site               => 'http://api.fitbit.com',
+          :site               => 'http://www.fitbit.com',
           :request_token_path => '/oauth/request_token',
           :access_token_path  => '/oauth/access_token',
           :authorize_path     => '/oauth/authorize'
@@ -42,7 +42,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= MultiJson.load(access_token.get('http://api.fitbit.com/1/user/-/profile.json').body)
+        @raw_info ||= MultiJson.load(access_token.get('http://www.fitbit.com/1/user/-/profile.json').body)
       end
     end
   end
